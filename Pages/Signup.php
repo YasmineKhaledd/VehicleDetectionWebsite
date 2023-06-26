@@ -2,7 +2,7 @@
 // Database configuration
 $servername = "localhost";
 $username = "root";
-$password = "123123";
+$password = "123";
 $database = "vehicledetection";
 
 // Create a new MySQLi instance
@@ -17,9 +17,9 @@ if ($connection->connect_error) {
 use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\Exception; 
 
-require 'C:/xampp/htdocs/gp/Pages/PHPMailer/src/Exception.php'; 
-require 'C:/xampp/htdocs/gp/Pages/PHPMailer/src/PHPMailer.php'; 
-require 'C:/xampp/htdocs/gp/Pages/PHPMailer/src/SMTP.php'; 
+require 'C:/xampp/htdocs/gp/gp/Pages/PHPMailer/src/Exception.php'; 
+require 'C:/xampp/htdocs/gp/gp/Pages/PHPMailer/src/PHPMailer.php'; 
+require 'C:/xampp/htdocs/gp/gp/Pages/PHPMailer/src/SMTP.php'; 
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $mail->Host = 'smtp.office365.com'; // Your SMTP server hostname
             $mail->SMTPAuth = true;
             $mail->Username = 'yasminekhaled558@gmail.com'; // Your SMTP username
-            $mail->Password = 'pass'; // Your SMTP password
+            $mail->Password = 'hena el pass'; // Your SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port = 587;
 
@@ -114,6 +114,48 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,800&family=Roboto+Slab:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;1,300&display=swap" rel="stylesheet">
     <title>Signup</title>
+    <style>
+        @media (max-width:1000px) {
+  input{
+    width: 100% !important;
+  }
+}
+input{
+  width: 400px ;
+}
+.formm{
+  padding-top: 150px;
+  display: block;
+  position: relative;
+  height: 1000px;
+  width: 100%;
+
+}
+.form-label{
+  font-family: 'Playfair Display', serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Slab', serif;
+  font-size: 30px;}
+  .form-control{
+  border: 3px solid rgb(25 68 112 / 75%);
+  border-radius: 10px;
+
+
+}
+.btnn{
+  padding: 10px;
+  width: 190px;
+  margin-top: 15px;
+  margin-left: 50px;
+  border-radius: 10px;
+  background-color: rgb(25 68 112 / 75%);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold ;
+  border: 2px solid #00090c;
+}
+
+    </style>
 </head>
 <body>
     <main>      

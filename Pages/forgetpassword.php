@@ -1,9 +1,9 @@
 <?php 
 use PHPMailer\PHPMailer\PHPMailer; 
 use PHPMailer\PHPMailer\Exception; 
-require 'C:/xampp/htdocs/gp/Pages/PHPMailer/src/Exception.php'; 
-require 'C:/xampp/htdocs/gp/Pages/PHPMailer/src/PHPMailer.php'; 
-require 'C:/xampp/htdocs/gp/Pages/PHPMailer/src/SMTP.php'; 
+require 'C:/xampp/htdocs/gp/gp/Pages/PHPMailer/src/Exception.php'; 
+require 'C:/xampp/htdocs/gp/gp/Pages/PHPMailer/src/PHPMailer.php'; 
+require 'C:/xampp/htdocs/gp/gp/Pages/PHPMailer/src/SMTP.php'; 
 
 // Database configuration 
 $servername = "localhost"; 
@@ -38,7 +38,7 @@ if(isset($_POST['verifynum'])) {
       $mail->Host = 'smtp.office365.com'; //Set the SMTP server to send through 
       $mail->SMTPAuth = true; //Enable SMTP authentication 
       $mail->Username = 'yasminekhaled558@gmail.com'; //SMTP username (your Outlook.com email address) 
-      $mail->Password = 'pass'; //SMTP password (the app password you generated) 
+      $mail->Password = 'ektbo hena el password w ghayaro el email elly fo2 w elly ta7t dol lel email bta3ko w tkono 3amlen beh sign up bardo fel website hehe'; //SMTP password (the app password you generated) 
       $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS; //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged 
       $mail->Port = 587; //TCP port to connect to 
 
@@ -55,7 +55,6 @@ if(isset($_POST['verifynum'])) {
       $mail->send(); 
       
       echo 'Your password has been sent to your email address. Please check your inbox and try to login again.';
-      //header("Location: Login.php");
     } catch (Exception $e) { 
       echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"; 
     } 

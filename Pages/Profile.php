@@ -33,14 +33,32 @@
             margin-left: 140px;
         }
 
-        .img-account-profile {
+ .img-account-profile {
   border-radius: 50%;
   width: 300px; /* change this value to adjust the size of the photo */
   height: 300px;
   object-fit: cover; /* ensure the photo fills its container without stretching */
 }
-
-   
+           /* Media queries */
+           @media only screen and (max-width: 576px) {
+        .featurette-heading {
+          font-size: 1.5rem;
+          line-height: 1.1;
+          margin: 0.5rem 0;
+        }
+      }
+      @media only screen and (max-width: 768px) {
+        .display-26 {
+          font-size: 1.5rem;
+          margin-right: 0.2rem;
+        }
+      }
+      @media only screen  and (max-width:576px)
+      {
+       #save{
+        margin-left: 150px;
+       } 
+      }
     </style>
 </head>
 <body class="text-center">
@@ -55,7 +73,7 @@
         // Database configuration
         $servername = "localhost";
         $username = "root";
-        $password = "123123";
+        $password = "123";
         $database = "vehicledetection";
         
         // Create a connection to the database
@@ -131,7 +149,7 @@
                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <img src="Logo.PNG" alt="Logo" width="50" height="50" class="me-2">
                         <li><a href="Home.php" class="nav-link px-3 text-secondary fw-bold fs-4">Home</a></li>
-                        <li><a href="Rules.html" class="nav-link px-3 text-secondary fw-bold fs-4">​​​Traffic violations and penalties regulations</a></li>
+                        <li><a href="Rules.php" class="nav-link px-3 text-secondary fw-bold fs-4">​​​Traffic violations and penalties regulations</a></li>
                     </ul>
                     <a href="logout.php">
                 <button type="button" class="btn btn-danger me-3"  >Log out</button>
@@ -158,11 +176,11 @@
                                         <div class="card mb-4 mb-xl-0">
                                             <div class="card-body text-center">
                                             <!-- Profile picture image-->
-                                            <img class="img-account-profile  mb-2 " src="<?php echo $row['ProfilePicture']; ?>" alt="">
+                                            <img class="img-account-profile  mb-2 " src="<?php echo $row['ProfilePicture']; ?>" alt="" style="max-width: 100%;">
                                             <!-- Profile picture upload form-->
                                             <form method="post" enctype="multipart/form-data">
                                                 <input type="file" name="profile_picture">
-                                                <button class="btn btn-primary mt-2" type="submit" name="save">Save</button>
+                                                <button class="btn btn-primary mt-2" type="submit" name="save" id="save">Save</button>
                                             </form>
                                         </div>
                                     </div>
@@ -170,7 +188,7 @@
                                 
                                 <div class="col-lg-6 px-xl-10">
                                     <div class="">
-                                        <p class="featurette-heading lh-1 my-3 result">User Information</p>
+                                        <p class="featurette-heading lh-1 my-3 result" >User Information</p>
                                     </div>
                                  
 <!-- Create a row with centered columns -->
@@ -197,7 +215,7 @@
                                     </div>
                                     <ul class="list-unstyled mb-0">
     <li class="mb-2 mb-xl-3" style="margin-left: 120px;">
-        <span class="display-26 text-danger me-2 font-weight-600 fw-bold" " >Violation Description:</span>
+        <span class="display-26 text-danger me-2 font-weight-600 fw-bold" >Violation Description:</span>
         <?php
         $sql = "SELECT * FROM vehicle WHERE ID = '".$_SESSION['NationalID']."'";
         $result = $conn->query($sql);

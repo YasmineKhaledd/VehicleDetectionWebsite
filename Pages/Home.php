@@ -27,9 +27,13 @@
   .texttt{
     font-size: 150px;
     margin-top: 200px;
-    margin-left: 210px;
+    text-align: center;
+    width: 100% !important;
   }
-
+  @media (max-width:1000px) {
+    .texttt{font-size: 70px; ;}
+  
+}
   .opa {
     opacity: 45%;
 
@@ -44,12 +48,15 @@
 
     margin-top: 147px;
     margin-bottom: 130px;
-    margin-left: 130px;
     border-radius: 42px;
     border-color: #4d7dad;
     border-style: solid;
-    height: 336px;
-    width: 1500px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    height:fit-content;
+    padding: 30px 0px;
+    width: 100%;
     background-color: #dde3e1;
   }
 
@@ -61,14 +68,26 @@
       font-family:Georgia, 'Times New Roman', Times, serif; 
       font-weight:bolder; 
       font-size: 50px; 
+      width: 100%;
+   
   
   }
+#myCarousel{
+
+ width: 100%;
 
 
-.ved{
-  margin-left: 150px;
-  margin-top: 100px;
 }
+#myCarousel img{
+
+width: 100%;
+
+}
+.ved{
+  margin-top: 100px;
+  margin-bottom: 20px;
+}
+
 
 </style>
 
@@ -79,9 +98,6 @@
 
       
 <main>
-      
-      
-      
       <header class="p-3 text-bg-dark">
         <div class="container">
           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
@@ -89,16 +105,10 @@
               <img src="Logo.PNG" alt="Logo" width="50" height="50" class="me-2">
               <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"/></svg>
             </a>
-    
             <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
               <li><a href="Home.php" class="nav-link px-2 text-secondary fw-bold fs-4">Home</a></li>
               <li><a href="Rules.php" class="nav-link px-3 text-secondary fw-bold fs-4">​​​Traffic violations and penalties regulations</a></li>
 
-            </ul>
-
-          
-          
-        
           <?php
             session_start();
 
@@ -189,8 +199,9 @@
 
 <div class="col-md-8 order-md-2 featurette-heading  lh-1  ">
 
-        <p class="div2"> Best In Traffic Violation Detection <hr></p>
-        <h4> YOU CAN FIND OUT THE VIOLATIONS OF YOUR VEHICLE</h4> 
+        <p class="div2"> Best In Traffic Violation Detection<hr>
+        <h4> YOU CAN FIND OUT THE VIOLATIONS OF YOUR VEHICLE</h4>  </p>
+       
 
         
 </div>
